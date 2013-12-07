@@ -6,7 +6,7 @@
 Name:		qtermwidget
 Summary:	Qt4 terminal widget
 Version:	0.4.0
-Release: 	3
+Release: 	4
 License:	GPLv2
 Source0:	%{name}-%{name}-master.tar.gz
 Group:		Development/Other
