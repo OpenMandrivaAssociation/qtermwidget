@@ -2,14 +2,19 @@
 %define	libname		%mklibname qtermwidget %{major}
 %define	devname	%mklibname -d qtermwidget
 
+%define commit 8b3062f0248673b23b88afbd6f1d6ca581820c94
+%define shortcommit %(c=%{commit}; echo ${c:0:7})
+
+
 Summary:	Qt4 terminal widget
 Name:		qtermwidget
 Version:	0.4.0
-Release: 	5
+Release: 	6
 License:	GPLv2
 Group:		Development/Other
-Url:		https://gitorious.org/qtermwidget
-Source0:	%{name}-%{name}-master.tar.gz
+URL:            https://github.com/qterminal/qtermwidget/
+#Source0:       https://github.com/qterminal/qtermwidget/archive/%{version}.tar.gz
+Source0:        https://github.com/qterminal/qtermwidget/tarball/%{commit}/qterminal-%{name}-%{version}-%{shortcommit}.tar.gz
 BuildRequires:	cmake
 BuildRequires:	qt4-devel
 BuildRequires:	qt4-linguist
@@ -39,7 +44,7 @@ Provides:	%{name}-devel = %{version}-%{release}
 This package provides headers files for qtermwidget development.
 
 %prep
-%setup -qn %{name}-%{name}
+%setup -qn qterminal-%{name}-%{shortcommit}
 
 %build
 %cmake
