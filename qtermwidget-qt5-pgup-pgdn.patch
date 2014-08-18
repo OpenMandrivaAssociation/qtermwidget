@@ -1,0 +1,15 @@
+--- qterminal-qtermwidget-ebf7d6c/lib/Vt102Emulation.cpp.omv~	2014-08-18 18:13:57.338155288 +0200
++++ qterminal-qtermwidget-ebf7d6c/lib/Vt102Emulation.cpp	2014-08-18 18:15:03.289330785 +0200
+@@ -958,6 +958,12 @@ void Vt102Emulation::sendKeyEvent( QKeyE
+         else if(event->key() == Qt::Key_Tab) {
+             textToSend += 0x09;
+         }
++        else if(event->key() == Qt::Key_PageUp) {
++            textToSend += "\033[5~";
++        }
++        else if(event->key() == Qt::Key_PageDown) {
++            textToSend += "\033[6~";
++        }
+         else {
+             textToSend += _codec->fromUnicode(event->text());
+         }

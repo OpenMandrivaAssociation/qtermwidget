@@ -9,12 +9,13 @@
 Summary:	Qt terminal widget
 Name:		qtermwidget
 Version:	0.4.1
-Release: 	0.20140714.1
+Release: 	0.20140818.1
 License:	GPLv2+
 Group:		Development/Other
 Url:		https://github.com/qterminal/qtermwidget/
 #Source0:	https://github.com/qterminal/qtermwidget/archive/%{version}.tar.gz
 Source0:	https://github.com/qterminal/qtermwidget/tarball/%{commit}/qterminal-%{name}-%{version}-%{shortcommit}.tar.gz
+Patch0:		qtermwidget-qt5-pgup-pgdn.patch
 BuildRequires:	cmake
 BuildRequires:	qt5-devel
 BuildRequires:	qt5-linguist
@@ -65,6 +66,7 @@ This package provides headers files for qtermwidget development.
 
 %prep
 %setup -qn qterminal-%{name}-%{shortcommit}
+%apply_patches
 
 %build
 %cmake -DUSE_QT5:BOOL=ON -DBUILD_DESIGNER_PLUGIN:BOOL=OFF
