@@ -3,19 +3,18 @@
 %define devname %mklibname qtermwidget5 -d
 %define olddevname %mklibname qtermwidget -d
 
-%define commit ebf7d6c5b0da670f3d5465f6d0840d80c4f463cd
+%define commit 0b430bfd9209a0ad4e48b658475d1113240637ab
 %define shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Summary:	Qt terminal widget
 Name:		qtermwidget
 Version:	0.4.1
-Release: 	0.20140818.1
+Release: 	0.20141017.1
 License:	GPLv2+
 Group:		Development/Other
 Url:		https://github.com/qterminal/qtermwidget/
 #Source0:	https://github.com/qterminal/qtermwidget/archive/%{version}.tar.gz
 Source0:	https://github.com/qterminal/qtermwidget/tarball/%{commit}/qterminal-%{name}-%{version}-%{shortcommit}.tar.gz
-Patch0:		qtermwidget-qt5-pgup-pgdn.patch
 BuildRequires:	cmake
 BuildRequires:	qt5-devel
 BuildRequires:	qt5-linguist
