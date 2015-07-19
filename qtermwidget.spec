@@ -9,7 +9,7 @@
 Summary:	Qt terminal widget
 Name:		qtermwidget
 Version:	0.4.1
-Release: 	0.20141017.2
+Release: 	0.20141017.3
 License:	GPLv2+
 Group:		Development/Other
 Url:		https://github.com/qterminal/qtermwidget/
