@@ -3,9 +3,6 @@
 %define devname %mklibname qtermwidget5 -d
 %define olddevname %mklibname qtermwidget -d
 
-%define commit 0b430bfd9209a0ad4e48b658475d1113240637ab
-%define shortcommit %(c=%{commit}; echo ${c:0:7})
-
 Summary:	Qt terminal widget
 Name:		qtermwidget
 Version:	0.6.0
@@ -63,7 +60,7 @@ This package provides headers files for qtermwidget development.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -qn qterminal-%{name}-%{shortcommit}
+%setup -q
 %apply_patches
 
 %build
