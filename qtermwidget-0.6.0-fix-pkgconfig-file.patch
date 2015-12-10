@@ -1,0 +1,14 @@
+diff -Naur qtermwidget-0.6.0/cmake/create_pkgconfig_file.cmake qtermwidget-0.6.0.tpg/cmake/create_pkgconfig_file.cmake
+--- qtermwidget-0.6.0/cmake/create_pkgconfig_file.cmake	2014-10-21 15:47:40.000000000 +0000
++++ qtermwidget-0.6.0.tpg/cmake/create_pkgconfig_file.cmake	2015-12-10 23:30:18.972484936 +0000
+@@ -13,8 +13,8 @@
+ 
+     file(WRITE "${_pkgfname}"
+             "prefix=${CMAKE_INSTALL_PREFIX}\n"
+-            "libdir=\${prefix}/${CMAKE_INSTALL_LIBDIR}\n"
+-            "includedir=\${prefix}/${CMAKE_INSTALL_INCLUDEDIR}\n"
++            "libdir=\${CMAKE_INSTALL_LIBDIR}\n"
++            "includedir=\${CMAKE_INSTALL_INCLUDEDIR}\n"
+             "\n"
+             "Name: ${name}\n"
+             "Description: ${desc}\n"

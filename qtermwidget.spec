@@ -11,6 +11,7 @@ License:	GPLv2+
 Group:		Development/Other
 Url:		https://github.com/lxde/qtermwidget
 Source0:	https://github.com/lxde/qtermwidget/releases/download/%{name}/%{name}-%{version}.tar.xz
+Patch0:		qtermwidget-0.6.0-fix-pkgconfig-file.patch
 BuildRequires:	cmake
 BuildRequires:	qt5-devel
 BuildRequires:	qt5-linguist
