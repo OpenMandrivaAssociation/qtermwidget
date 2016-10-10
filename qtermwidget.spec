@@ -5,12 +5,12 @@
 
 Summary:	Qt terminal widget
 Name:		qtermwidget
-Version:	0.6.0
-Release: 	2
+Version:	0.7.0
+Release: 	1
 License:	GPLv2+
 Group:		Development/Other
 Url:		https://github.com/lxde/qtermwidget
-Source0:	https://github.com/lxde/qtermwidget/releases/download/%{name}/%{name}-%{version}.tar.xz
+Source0:	https://downloads.lxqt.org/qtermwidget/%{version}/qtermwidget-%{version}.tar.xz
 Patch0:		qtermwidget-0.6.0-fix-pkgconfig-file.patch
 BuildRequires:	cmake
 BuildRequires:	qt5-devel
@@ -23,7 +23,6 @@ embeddable Qt widget for using as a built-in console (or terminal
 emulation widget).
 
 %files
-%doc AUTHORS COPYING Changelog README TODO
 %{_datadir}/%{name}5/
 
 #----------------------------------------------------------------------------
