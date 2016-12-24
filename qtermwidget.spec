@@ -13,7 +13,7 @@ Url:		https://github.com/lxde/qtermwidget
 Source0:	https://downloads.lxqt.org/qtermwidget/%{version}/qtermwidget-%{version}.tar.xz
 Patch0:		qtermwidget-0.6.0-fix-pkgconfig-file.patch
 BuildRequires:	cmake
-BuildRequires:	qmake
+BuildRequires:	qmake5
 BuildRequires:	cmake(Qt5Core)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5Xml)
