@@ -13,8 +13,11 @@ Url:		https://github.com/lxde/qtermwidget
 Source0:	https://downloads.lxqt.org/qtermwidget/%{version}/qtermwidget-%{version}.tar.xz
 Patch0:		qtermwidget-0.6.0-fix-pkgconfig-file.patch
 BuildRequires:	cmake
-BuildRequires:	qt5-devel
-BuildRequires:	qt5-linguist
+BuildRequires:	qmake
+BuildRequires:	cmake(Qt5Core)
+BuildRequires:	cmake(Qt5Widgets)
+BuildRequires:	cmake(Qt5Xml)
+BuildRequires:	cmake(Qt5LinguistTools)
 
 %description
 QTermWidget is an open source project based on KDE4 Konsole application.
