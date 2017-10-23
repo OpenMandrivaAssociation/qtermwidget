@@ -5,13 +5,12 @@
 
 Summary:	Qt terminal widget
 Name:		qtermwidget
-Version:	0.7.1
+Version:	0.8.0
 Release: 	1
 License:	GPLv2+
 Group:		Development/Other
 Url:		https://github.com/lxde/qtermwidget
-Source0:	https://downloads.lxqt.org/qtermwidget/%{version}/qtermwidget-%{version}.tar.xz
-Patch0:		qtermwidget-0.6.0-fix-pkgconfig-file.patch
+Source0:	https://github.com/lxde/qtermwidget/archive/%{version}.tar.gz
 BuildRequires:	cmake
 BuildRequires:	qmake5
 BuildRequires:	cmake(Qt5Core)
