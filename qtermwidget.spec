@@ -17,6 +17,7 @@ BuildRequires:	cmake(Qt5Core)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5Xml)
 BuildRequires:	cmake(Qt5LinguistTools)
+BuildRequires:	lxqt-build-tools >= 0.4.0
 
 %description
 QTermWidget is an open source project based on KDE4 Konsole application.
