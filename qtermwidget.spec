@@ -5,8 +5,8 @@
 
 Summary:	Qt terminal widget
 Name:		qtermwidget
-Version:	0.8.0
-Release: 	2
+Version:	0.9.0
+Release: 	1
 License:	GPLv2+
 Group:		Development/Other
 Url:		https://github.com/lxde/qtermwidget
@@ -59,7 +59,7 @@ This package provides headers files for qtermwidget development.
 %{_includedir}/%{name}5
 %{_libdir}/lib%{name}5.so
 %{_libdir}/pkgconfig/%{name}5.pc
-%{_datadir}/cmake/%{name}5
+%{_libdir}/cmake/%{name}5
 
 #----------------------------------------------------------------------------
 
