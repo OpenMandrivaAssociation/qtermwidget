@@ -64,7 +64,7 @@ This package provides headers files for qtermwidget development.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 %cmake_qt5 -DUSE_QT5:BOOL=ON -DPULL_TRANSLATIONS=NO -DBUILD_DESIGNER_PLUGIN:BOOL=OFF
