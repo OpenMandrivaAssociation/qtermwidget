@@ -11,6 +11,7 @@ License:	GPLv2+
 Group:		Development/Other
 Url:		https://github.com/lxde/qtermwidget
 Source0:	https://github.com/lxde/qtermwidget/archive/%{version}.tar.gz
+Patch0:		qtermwidget-0.14.1-fix-build.patch
 BuildRequires:	cmake
 BuildRequires:	qmake5
 BuildRequires:	cmake(Qt5Core)
@@ -63,8 +64,7 @@ This package provides headers files for qtermwidget development.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
 
 %build
 %cmake_qt5 -DUSE_QT5:BOOL=ON -DPULL_TRANSLATIONS=NO -DBUILD_DESIGNER_PLUGIN:BOOL=OFF
@@ -72,4 +72,3 @@ This package provides headers files for qtermwidget development.
 
 %install
 %make_install -C build
-
