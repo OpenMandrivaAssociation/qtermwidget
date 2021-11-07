@@ -1,17 +1,18 @@
-%define major 0
+%define major 1
 %define libname %mklibname qtermwidget5 %{major}
 %define devname %mklibname qtermwidget5 -d
 %define olddevname %mklibname qtermwidget -d
 
 Summary:	Qt terminal widget
 Name:		qtermwidget
-Version:	0.17.0
+Version:	1.0.0
 Release:	1
 License:	GPLv2+
 Group:		Development/Other
 Url:		https://github.com/lxqt/qtermwidget
 Source0:	https://github.com/lxqt/qtermwidget/releases/download/%{version}/qtermwidget-%{version}.tar.xz
 BuildRequires:	cmake
+BuildRequires:	ninja
 BuildRequires:	qmake5
 BuildRequires:	cmake(Qt5Core)
 BuildRequires:	cmake(Qt5Widgets)
@@ -64,10 +65,10 @@ This package provides headers files for qtermwidget development.
 
 %prep
 %autosetup -p1
+%cmake_qt5 -DUSE_QT5:BOOL=ON -DPULL_TRANSLATIONS=NO -DBUILD_DESIGNER_PLUGIN:BOOL=OFF -G Ninja
 
 %build
-%cmake_qt5 -DUSE_QT5:BOOL=ON -DPULL_TRANSLATIONS=NO -DBUILD_DESIGNER_PLUGIN:BOOL=OFF
-%make_build
+%ninja_build -C build
 
 %install
-%make_install -C build
+%ninja_install -C build
