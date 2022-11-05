@@ -5,7 +5,7 @@
 
 Summary:	Qt terminal widget
 Name:		qtermwidget
-Version:	1.1.0
+Version:	1.2.0
 Release:	1
 License:	GPLv2+
 Group:		Development/Other
