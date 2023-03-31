@@ -6,7 +6,7 @@
 Summary:	Qt terminal widget
 Name:		qtermwidget
 Version:	1.2.0
-Release:	3
+Release:	4
 License:	GPLv2+
 Group:		Development/Other
 Url:		https://github.com/lxqt/qtermwidget
