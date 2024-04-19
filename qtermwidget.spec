@@ -1,24 +1,24 @@
-%define major 1
-%define libname %mklibname qtermwidget5 %{major}
-%define devname %mklibname qtermwidget5 -d
+%define major 2
+%define libname %mklibname qtermwidget6
+%define devname %mklibname qtermwidget6 -d
 %define olddevname %mklibname qtermwidget -d
+%define gitdate 20240419
 
 Summary:	Qt terminal widget
 Name:		qtermwidget
-Version:	1.4.0
-Release:	1
+Version:	2.0.0
+Release:	%{?gitdate:0.%{gitdate}.}1
 License:	GPLv2+
 Group:		Development/Other
 Url:		https://github.com/lxqt/qtermwidget
-Source0:	https://github.com/lxqt/qtermwidget/releases/download/%{version}/qtermwidget-%{version}.tar.xz
+Source0:	https://github.com/lxqt/qtermwidget/%{!?gitdate:releases/download/%{version}/qtermwidget-%{version}.tar.xz}%{?gitdate:archive/refs/heads/master.tar.gz#/%{name}-%{gitdate}.tar.gz}
 BuildRequires:	cmake
 BuildRequires:	ninja
-BuildRequires:	qmake5
-BuildRequires:	cmake(Qt5Core)
-BuildRequires:	cmake(Qt5Widgets)
-BuildRequires:	cmake(Qt5Xml)
-BuildRequires:	cmake(Qt5LinguistTools)
-BuildRequires:	cmake(lxqt-build-tools)
+BuildRequires:	cmake(Qt6Core)
+BuildRequires:	cmake(Qt6Widgets)
+BuildRequires:	cmake(Qt6Xml)
+BuildRequires:	cmake(Qt6LinguistTools)
+BuildRequires:	cmake(lxqt2-build-tools)
 
 %description
 QTermWidget is an open source project based on KDE4 Konsole application.
@@ -27,7 +27,7 @@ embeddable Qt widget for using as a built-in console (or terminal
 emulation widget).
 
 %files
-%{_datadir}/%{name}5/
+%{_datadir}/%{name}6/
 
 #----------------------------------------------------------------------------
 
@@ -40,7 +40,7 @@ Requires:	%{name}
 This package provides shared library for Qt4 terminal widget.
 
 %files -n %{libname}
-%{_libdir}/lib%{name}5.so.%{major}*
+%{_libdir}/lib%{name}6.so.%{major}*
 
 #----------------------------------------------------------------------------
 
@@ -56,16 +56,16 @@ Provides:	%{name}-devel = %{EVRD}
 This package provides headers files for qtermwidget development.
 
 %files -n %{devname}
-%{_includedir}/%{name}5
-%{_libdir}/lib%{name}5.so
-%{_libdir}/pkgconfig/%{name}5.pc
-%{_libdir}/cmake/%{name}5
+%{_includedir}/%{name}6
+%{_libdir}/lib%{name}6.so
+%{_libdir}/pkgconfig/%{name}6.pc
+%{_libdir}/cmake/%{name}6
 
 #----------------------------------------------------------------------------
 
 %prep
-%autosetup -p1
-%cmake_qt5 -DUSE_QT5:BOOL=ON -DPULL_TRANSLATIONS=NO -DBUILD_DESIGNER_PLUGIN:BOOL=OFF -G Ninja
+%autosetup -p1 -n %{name}-%{?gitdate:master}%{!?gitdate:%{version}}
+%cmake -DUSE_QT6:BOOL=ON -DPULL_TRANSLATIONS=NO -DBUILD_DESIGNER_PLUGIN:BOOL=OFF -G Ninja
 
 %build
 %ninja_build -C build
