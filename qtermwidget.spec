@@ -6,7 +6,7 @@
 
 Summary:	Qt terminal widget
 Name:		qtermwidget
-Version:	2.0.0
+Version:	2.0.1
 Release:	%{?gitdate:0.%{gitdate}.}1
 License:	GPLv2+
 Group:		Development/Other
