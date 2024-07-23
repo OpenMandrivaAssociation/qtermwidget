@@ -2,7 +2,7 @@
 %define libname %mklibname qtermwidget6
 %define devname %mklibname qtermwidget6 -d
 %define olddevname %mklibname qtermwidget -d
-%define gitdate 20240419
+#define gitdate 20240419
 
 Summary:	Qt terminal widget
 Name:		qtermwidget
