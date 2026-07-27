@@ -6,12 +6,12 @@
 
 Summary:	Qt terminal widget
 Name:		qtermwidget
-Version:	2.3.0
+Version:	2.4.0
 Release:	%{?gitdate:0.%{gitdate}.}1
 License:	GPLv2+
 Group:		Development/Other
 Url:		https://github.com/lxqt/qtermwidget
-Source0:	https://github.com/lxqt/qtermwidget/%{!?gitdate:releases/download/%{version}/qtermwidget-%{version}.tar.xz}%{?gitdate:archive/refs/heads/master.tar.gz#/%{name}-%{gitdate}.tar.gz}
+Source0:	https://github.com/lxqt/qtermwidget/%{!?gitdate:releases/download/%{version}/qtermwidget-%{version}.tar.xz}%{?gitdate:archive/refs/heads/master.tar.gz#/%{name}-%{gitdate}.tar.xz}
 BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:	cmake(Qt6Core)
