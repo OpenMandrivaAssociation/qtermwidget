@@ -67,7 +67,7 @@ This package provides headers files for qtermwidget development.
 %autosetup -p1 -n %{name}-%{?gitdate:master}%{!?gitdate:%{version}}
 %build
 %cmake -DUSE_QT6:BOOL=ON -DPULL_TRANSLATIONS=NO -DBUILD_DESIGNER_PLUGIN:BOOL=OFF -G Ninja
-%ninja_build -C build
+%ninja_build
 
 %install
 %ninja_install -C build
