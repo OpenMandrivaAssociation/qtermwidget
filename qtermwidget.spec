@@ -7,13 +7,15 @@
 Summary:	Qt terminal widget
 Name:		qtermwidget
 Version:	2.4.0
-Release:	%{?gitdate:0.%{gitdate}.}1
+Release:	%{?gitdate:0.%{gitdate}.}2
 License:	GPLv2+
 Group:		Development/Other
 Url:		https://github.com/lxqt/qtermwidget
 Source0:	https://github.com/lxqt/qtermwidget/%{!?gitdate:releases/download/%{version}/qtermwidget-%{version}.tar.xz}%{?gitdate:archive/refs/heads/master.tar.gz#/%{name}-%{gitdate}.tar.xz}
-BuildRequires:	cmake
-BuildRequires:	ninja
+BuildSystem:	cmake
+BuildOption:	-DUSE_QT6:BOOL=ON
+BuildOption:	-DPULL_TRANSLATIONS=NO
+BuildOption:	-DBUILD_DESIGNER_PLUGIN:BOOL=OFF
 BuildRequires:	cmake(Qt6Core)
 BuildRequires:	cmake(Qt6Widgets)
 BuildRequires:	cmake(Qt6Xml)
@@ -60,14 +62,3 @@ This package provides headers files for qtermwidget development.
 %{_libdir}/lib%{name}6.so
 %{_libdir}/pkgconfig/%{name}6.pc
 %{_libdir}/cmake/%{name}6
-
-#----------------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n %{name}-%{?gitdate:master}%{!?gitdate:%{version}}
-%build
-%cmake -DUSE_QT6:BOOL=ON -DPULL_TRANSLATIONS=NO -DBUILD_DESIGNER_PLUGIN:BOOL=OFF -G Ninja
-%ninja_build
-
-%install
-%ninja_install -C build
